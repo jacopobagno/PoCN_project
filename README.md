@@ -16,5 +16,5 @@ Complex Networks course projects.
 
 | Task # | Project name | Type | Moodle score |
 |:---:|---|---|:---:|
-| #8 | Dark Web: reproduction of the De Domenico--Arenas model | Theoretical | `[0.4]` |
+| #8 | De Domenico--Arenas model | Theoretical | `[0.4]` |
 | #39 | Epidemic spreading on cruise-ship temporal contact networks | Data project | `[1.2]` |
