@@ -1,0 +1,57 @@
+\begingroup\small
+
+\section{Age--bandwidth growth model}
+The mechanism used to model the DarkNet is based on age and bandwith. Each node $i$ has
+arrival time $T_i$, age $A_i(\tau)=\tau-T_i$, and a fixed bandwidth $B_i$ drawn
+from a log-normal distribution with parameters $(\mu,\sigma)=(0,1)$. At each step $\tau$, a new node $i$ and $M$ links enter in the network. The $2M$ endpoints
+are chosen randomly with probability
+\[
+ p_i(\tau)=\frac{A_i(\tau)^\beta B_i^\gamma}
+ {\sum_j A_j(\tau)^\beta B_j^\gamma}.
+\]
+Here we use the same parameters $\beta=\gamma=1$. This mechanism ensures that new nodes have to increase their age before being linked, in fact in this kind of network we can assume that reputation comes with aging, rather than degree, as classic preferential-attachment networks.
+ After that, these $2M$ sampled endpoints are randomly paired, and the last step consists in rewiring nodes randomly while preserving the
+degree distribution, in order to eliminate possible structural correlations.\\
+The initial network we start with has $n_0=200$ nodes and $e_0=1000$ edges, then we let it 
+grow until it reaches the same size of the 2015 empirical network, that is $N=5535$ and $E=274831$. \\
+We generate 50 independent stochastic realizations of the network for calculating the
+degree distribution and 400 for the structural averages. Moreover, we generated also 1000 random graphs
+preserving the degree distribution, which served as null models for the normalized rich-club test. \\
+After the network generation, isolated nodes are retained for degree-based metrics, while path-dependent quantities are computed on the largest connected component (LCC).
+The average path length is estimated in a computationally efficient way by selecting 256 nodes uniformly at random from the LCC. For each sampled node,
+ shortest-path distances to all other LCC nodes are computed and then averaged. The reported diameter is therefore the largest distance observed from those sampled sources (and could be an underestimate of the real diameter). 
+ Degree assortativity is computed as the Pearson correlation coefficient between the degrees of the two endpoints of every edge. A negative value indicates that high-degree nodes tend to connect to
+lower-degree nodes.
+For the rich-club analysis, nodes with degree greater than a threshold $k$ are
+selected and their internal edge density is computed as
+$\phi(k)=2E_{>k}/[N_{>k}(N_{>k}-1)]$. The plotted ratio is
+$\phi(k)/\widetilde{\phi}(k)$, where $\widetilde{\phi}(k)$ is the expected coefficient in the random network ensemble.
+ 
+\section{Results}
+
+
+\begingroup\normalsize
+Table~\ref{tab:darknet-empirical-comparison} (appendix) shows a good agreement between the synthetic network and the empirical 2015 network. The mean
+degree is the same by construction (it depends just on $N$ and $E$), while global clustering, mean path length, and
+diameter are close to the reference values. The synthetic graph has a lower
+average local clustering and a less negative assortativity coefficient, but it
+reproduces the same qualitative signatures: substantial clustering and
+disassortative mixing.
+\endgroup
+
+\begingroup\normalsize
+Figure~\ref{fig:darknet-structural-signatures} (appendix) shows the main characteristics
+of our synthetic network. Panel (a) presents the degree probability
+distribution, which is compatible with a power law with scaling exponent $-1$
+and a cutoff around $\ln k=6$, as in the reference paper. Panel (b) shows that
+the normalized rich-club ratio is close to one over almost all degree
+thresholds. Hubs are therefore not connected to each other more often than
+expected from random fluctuations. Panel (c) shows that $k_{nn}(k)$ decreases markedly in the high-degree tail:
+the largest hubs are, on average, attached to nodes of lower degree than the
+intermediate-degree nodes, which is consistent with the negative assortativity
+reported above. Finally, panel (d) shows that $c(k)$ remains near $0.3$ at
+moderate degree but decreases slightly for large degrees $k$.
+\endgroup
+
+\endgroup
+

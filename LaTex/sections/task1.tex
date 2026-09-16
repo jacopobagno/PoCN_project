@@ -1,0 +1,29 @@
+\chapter{Task \#8 - De Domenico-Arenas model}
+
+\begingroup\small
+
+ 
+
+\section{Introduction}
+
+The aim is to reproduce the principal findings of De Domenico and
+Arenas~\cite{dedomenico2017darknet} for the Darknet. We will model a synthetic network using their same proposed mechanism and compare it with their empirical January 2015 Tor snapshot, which contains $N=5535$
+nodes and $E=274831$ undirected edges. The main features of the DarkNet that we want to reproduce are:
+
+\begin{itemize}[leftmargin=1.25em,itemsep=1.2pt,topsep=2pt]
+  \item \textbf{Heavy-tailed degree distribution:} $P(k)$  heterogeneous and
+  compatible with a truncated power law with scaling exponent equal to $-1$ and with a cutoff at $\ln k\approx 6$.
+  \item \textbf{High mean degree:} $\langle k\rangle=2E/N\simeq99.31$.
+  \item \textbf{Clustering and characteristic lenght:} The local clustering coefficient
+  $c_i=2T_i/[k_i(k_i-1)]$, where $T_i$ is the number of closed triangles connected to node $i$, is broadly distributed and peaks near $0.3$, with an average value of $\bar c_i \approx 0.4$. 
+  The global clustering, calculated as the ratio between the total number of closed triplets and the total number
+ of connected triplets in the network, has a value of $C\approx 0.2$. The average path length is about $l\approx2.5$ and the diameter is $D\approx 5$. 
+  \item \textbf{Higher-order correlations:} $k_{nn}(k)$ and $c(k)$ vary with
+  degree, both have a decreasing behaviour for large $k$, but the first is more pronounced. The degree assortativity coefficient $r$ is around $-0.25$. This indicates that hubs tend slightly to
+  connect to lower-degree nodes.
+  \item \textbf{No rich-club core.} The normalized rich-club ratio $\phi(k)/\widetilde{\phi}(k)$ stays almost constant near $1$, rather than
+  showing a dense core of high-degree nodes.
+\end{itemize}
+
+
+\endgroup

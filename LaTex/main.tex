@@ -1,0 +1,35 @@
+\documentclass[12pt]{report}
+
+% Standalone source bundle for the final Physics of Complex Networks report.
+\input{base/packages}
+\input{base/style}
+
+\begin{document}
+
+% Cover page and table of contents
+\input{sections/front_page}
+\begingroup
+  \hypersetup{linkcolor=black}
+  \tableofcontents
+\endgroup
+
+\clearpage
+\pagenumbering{arabic}
+\titleformat{\section}[hang]{\large\bfseries}
+  {\textcolor{unipd}{\thesection}\hsp\textcolor{gray75}{|}\hsp}
+  {0pt}{\large\bfseries\textcolor{gray25}}
+  [\color{unipd}{\titlerule[1.0pt]}]
+
+% Task #8 -- Dark Web
+\input{sections/task1}
+\input{sections/task2}
+\input{sections/task3}
+\input{sections/darknet_appendix}
+
+% Task #39 -- Cruise-ship epidemic spreading
+\input{sections/cruise_epidemic}
+
+\bibliographystyle{plainnat}
+\bibliography{bibliography.bib}
+
+\end{document}

@@ -1,0 +1,20 @@
+\begin{thebibliography}{2}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[De~Domenico and Arenas(2017)]{dedomenico2017darknet}
+Manlio De~Domenico and Alex Arenas.
+\newblock Modeling structure and resilience of the dark network.
+\newblock \emph{Physical Review E}, 95\penalty0 (2):\penalty0 022313, 2017.
+\newblock \doi{10.1103/PhysRevE.95.022313}.
+
+\bibitem[Pung et~al.()]{pungCruiseNetworks}
+Rachael Pung et~al.
+\newblock Cruise networks.
+\newblock Zenodo data archive and source repository.
+\newblock URL \url{https://github.com/rachaelpung/cruise_networks}.
+
+\end{thebibliography}
